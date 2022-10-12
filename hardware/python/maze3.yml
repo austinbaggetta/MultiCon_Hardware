@@ -1,0 +1,661 @@
+# Arduino settings. These has to agree with arduino sketch
+
+PORT: "COM4"
+BAUDRATE: 115200
+CMD_FLAG: 255
+TIMEOUT: 2
+TIMEOUT_HANDSHAKE: 5
+OUTPUT_PINS:
+  miniscope_ttl: 2
+  reward1: 5
+  reward2: 6
+  reward3: 7
+  reward4: 8
+  reward5: 9
+  reward6: 10
+  reward7: 11
+  reward8: 12
+
+# Logging settings
+
+LOG_FORMAT: "%(asctime)s: %(levelname)8s - %(message)s"
+LOG_FILE: circle_track_maze3.log
+LOG_LEVEL: DEBUG
+PRINT_LEVEL: INFO
+
+# Data settings
+
+DPATH: "."
+DATA_FILE: circle_track.csv
+DATA_HEADER:
+  - timestamp
+  - event
+  - data
+
+# Custom settings, not interpreted by pyMaze
+
+contexts:
+  - A
+  - B
+  - C
+  - D
+  - T
+lick_threshold: 2 # number of licks before rewarding
+reward_length: 0.07 # reward port open time in seconds
+nport: 8
+reward_port: # by context, 0 correspond to north, counting clockwise
+  A:
+    ca01:
+      - reward7
+      - reward3
+    ca02:
+      - reward1
+      - reward5
+    ca03:
+      - reward1
+      - reward6
+    ca04:
+      - reward7
+      - reward2
+    ms01:
+      - reward7
+      - reward3
+    ms02:
+      - reward1
+      - reward5
+    ms03:
+      - reward1
+      - reward6
+    ms04:
+      - reward7
+      - reward2
+    ms05:
+      - reward4
+      - reward8
+    ms06:
+      - reward3
+      - reward7
+    ms07:
+      - reward6
+      - reward2
+    ms08:
+      - reward8
+      - reward4
+    ms09:
+      - reward7
+      - reward3
+    ms10:
+      - reward6
+      - reward3
+    ms11:
+      - reward2
+      - reward5
+    ms12:
+      - reward7
+      - reward3
+    ms13:
+      - reward5
+      - reward3
+    ms14:
+      - reward5
+      - reward1
+    ms15:
+      - reward2
+      - reward6
+    ms16:
+      - reward2
+      - reward5
+    ms17:
+      - reward2
+      - reward6
+    ms18:
+      - reward5
+      - reward3
+    ms19:
+      - reward5
+      - reward1
+    ms20:
+      - reward2
+      - reward8
+    ms21:
+      - reward8
+      - reward4
+    ms22:
+      - reward8
+      - reward4
+    ms23:
+      - reward3
+      - reward7
+    ms24:
+      - reward7
+      - reward2
+    ms25:
+      - reward1
+      - reward4
+    ms26:
+      - reward1
+      - reward5
+    ms27:
+      - reward7
+      - reward3
+    ms28:
+      - reward6
+      - reward2
+    ms29:
+      - reward5
+      - reward1
+    ms30:
+      - reward4
+      - reward8
+    ms31:
+      - reward1
+      - reward7
+    ms32:
+      - reward8
+      - reward4
+    ms33:
+      - reward6
+      - reward2
+    ms34:
+      - reward1
+      - reward5
+    ms35:
+      - reward7
+      - reward3
+    ms36:
+      - reward6
+      - reward3
+    ms37:
+      - reward3
+      - reward7
+    ms38:
+      - reward2
+      - reward8
+    ms39:
+      - reward8
+      - reward3
+    ms40:
+      - reward2
+      - reward8
+  B:
+    ca01:
+      - reward2
+      - reward4
+    ca02:
+      - reward3
+      - reward7
+    ca03:
+      - reward6
+      - reward2
+    ca04:
+      - reward6
+      - reward2
+    ms01:
+      - reward2
+      - reward4
+    ms02:
+      - reward3
+      - reward7
+    ms03:
+      - reward6
+      - reward2
+    ms04:
+      - reward6
+      - reward2
+    ms05:
+      - reward3
+      - reward7
+    ms06:
+      - reward1
+      - reward5
+    ms07:
+      - reward1
+      - reward7
+    ms08:
+      - reward1
+      - reward7
+    ms09:
+      - reward5
+      - reward1
+    ms10:
+      - reward2
+      - reward8
+    ms11:
+      - reward7
+      - reward3
+    ms12:
+      - reward1
+      - reward6
+    ms13:
+      - reward8
+      - reward4
+    ms14:
+      - reward6
+      - reward4
+    ms15:
+      - reward1
+      - reward5
+    ms16:
+      - reward7
+      - reward3
+    ms17:
+      - reward4
+      - reward8
+    ms18:
+      - reward6
+      - reward2
+    ms19:
+      - reward2
+      - reward8
+    ms20:
+      - reward1
+      - reward6
+    ms21:
+      - reward8
+      - reward3
+    ms22:
+      - reward1
+      - reward3
+    ms23:
+      - reward4
+      - reward8
+    ms24:
+      - reward8
+      - reward4
+    ms25:
+      - reward7
+      - reward5
+    ms26:
+      - reward2
+      - reward6
+    ms27:
+      - reward1
+      - reward4
+    ms28:
+      - reward8
+      - reward5
+    ms29:
+      - reward7
+      - reward2
+    ms30:
+      - reward2
+      - reward6
+    ms31:
+      - reward6
+      - reward2
+    ms32:
+      - reward8
+      - reward3
+    ms33:
+      - reward1
+      - reward4
+    ms34:
+      - reward2
+      - reward6
+    ms35:
+      - reward2
+      - reward4
+    ms36:
+      - reward8
+      - reward4
+    ms37:
+      - reward2
+      - reward6
+    ms38:
+      - reward6
+      - reward3
+    ms39:
+      - reward6
+      - reward4
+    ms40:
+      - reward1
+      - reward5
+  C:
+    ca01:
+      - reward5
+      - reward1
+    ca02:
+      - reward4
+      - reward8
+    ca03:
+      - reward5
+      - reward3
+    ca04:
+      - reward5
+      - reward3
+    ms01:
+      - reward5
+      - reward1
+    ms02:
+      - reward4
+      - reward8
+    ms03:
+      - reward5
+      - reward3
+    ms04:
+      - reward5
+      - reward3
+    ms05:
+      - reward1
+      - reward5
+    ms06:
+      - reward2
+      - reward6
+    ms07:
+      - reward8
+      - reward4
+    ms08:
+      - reward8
+      - reward5
+    ms09:
+      - reward6
+      - reward3
+    ms10:
+      - reward7
+      - reward3
+    ms11:
+      - reward5
+      - reward1
+    ms12:
+      - reward5
+      - reward1
+    ms13:
+      - reward6
+      - reward2
+    ms14:
+      - reward8
+      - reward5
+    ms15:
+      - reward3
+      - reward7
+    ms16:
+      - reward5
+      - reward1
+    ms17:
+      - reward1
+      - reward5
+    ms18:
+      - reward1
+      - reward4
+    ms19:
+      - reward7
+      - reward3
+    ms20:
+      - reward7
+      - reward3
+    ms21:
+      - reward7
+      - reward5
+    ms22:
+      - reward2
+      - reward5
+    ms23:
+      - reward2
+      - reward6
+    ms24:
+      - reward5
+      - reward3
+    ms25:
+      - reward8
+      - reward4
+    ms26:
+      - reward4
+      - reward8
+    ms27:
+      - reward5
+      - reward1
+    ms28:
+      - reward8
+      - reward4
+    ms29:
+      - reward6
+      - reward8
+    ms30:
+      - reward3
+      - reward7
+    ms31:
+      - reward2
+      - reward5
+    ms32:
+      - reward1
+      - reward7
+    ms33:
+      - reward5
+      - reward3
+    ms34:
+      - reward3
+      - reward7
+    ms35:
+      - reward5
+      - reward1
+    ms36:
+      - reward6
+      - reward2
+    ms37:
+      - reward1
+      - reward5
+    ms38:
+      - reward7
+      - reward3
+    ms39:
+      - reward5
+      - reward1
+    ms40:
+      - reward3
+      - reward7
+  D:
+    ca01:
+      - reward6
+      - reward3
+    ca02:
+      - reward2
+      - reward6
+    ca03:
+      - reward8
+      - reward4
+    ca04:
+      - reward8
+      - reward4
+    ms01:
+      - reward6
+      - reward3
+    ms02:
+      - reward2
+      - reward6
+    ms03:
+      - reward8
+      - reward4
+    ms04:
+      - reward8
+      - reward4
+    ms05:
+      - reward2
+      - reward6
+    ms06:
+      - reward4
+      - reward8
+    ms07:
+      - reward8
+      - reward3
+    ms08:
+      - reward6
+      - reward2
+    ms09:
+      - reward2
+      - reward4
+    ms10:
+      - reward5
+      - reward1
+    ms11:
+      - reward6
+      - reward4
+    ms12:
+      - reward2
+      - reward4
+    ms13:
+      - reward7
+      - reward4
+    ms14:
+      - reward7
+      - reward3
+    ms15:
+      - reward4
+      - reward8
+    ms16:
+      - reward6
+      - reward4
+    ms17:
+      - reward3
+      - reward7
+    ms18:
+      - reward8
+      - reward4
+    ms19:
+      - reward7
+      - reward4
+    ms20:
+      - reward5
+      - reward1
+    ms21:
+      - reward6
+      - reward2
+    ms22:
+      - reward6
+      - reward2
+    ms23:
+      - reward1
+      - reward5
+    ms24:
+      - reward6
+      - reward2
+    ms25:
+      - reward6
+      - reward2
+    ms26:
+      - reward3
+      - reward7
+    ms27:
+      - reward6
+      - reward8
+    ms28:
+      - reward1
+      - reward7
+    ms29:
+      - reward7
+      - reward3
+    ms30:
+      - reward1
+      - reward5
+    ms31:
+      - reward8
+      - reward4
+    ms32:
+      - reward6
+      - reward2
+    ms33:
+      - reward8
+      - reward4
+    ms34:
+      - reward4
+      - reward8
+    ms35:
+      - reward8
+      - reward3
+    ms36:
+      - reward7
+      - reward5
+    ms37:
+      - reward4
+      - reward8
+    ms38:
+      - reward5
+      - reward1
+    ms39:
+      - reward7
+      - reward3
+    ms40:
+      - reward1
+      - reward6
+  T:
+    ALL:
+      - reward1
+      - reward2
+      - reward3
+      - reward4
+      - reward5
+      - reward6
+      - reward7
+      - reward8
+session_length: 20 # in minutes
+reward_after:  # if True, rewards start after a random time between 45 and 90 seconds
+  ca01: True
+  ca02: True
+  ca03: True
+  ca04: True
+  ms01: False
+  ms02: True
+  ms03: True
+  ms04: True
+  ms05: False
+  ms06: True
+  ms07: True
+  ms08: True
+  ms09: True
+  ms10: True
+  ms11: False
+  ms12: True
+  ms13: True
+  ms14: False
+  ms15: True
+  ms16: True
+  ms17: True
+  ms18: False
+  ms19: False
+  ms20: True
+  ms21: True
+  ms22: True
+  ms23: False
+  ms24: False
+  ms25: True
+  ms26: True
+  ms27: True
+  ms28: False
+  ms29: True
+  ms30: True
+  ms31: False
+  ms32: True
+  ms33: False
+  ms34: False
+  ms35: True
+  ms36: True
+  ms37: True
+  ms38: False
+  ms39: True
+  ms40: False
+touch_pin: # definition for touch sensor
+  1: reward1
+  2: reward2
+  3: reward3
+  4: reward4
+  5: reward5
+  6: reward6
+  7: reward7
+  8: reward8
+background_sound:
+  A: "assets/river.wav"
+  B: "assets/storm.wav"
+  C: "assets/whitenoise.wav"
+  D: "assets/talking.wav"
+miniscope_config_dir: "../mini_config_BehaviorCohort1"
+reward_direction: 1 # 1 or -1 where sign determine the direction
+roi_offset: 135 # offset of port 1 (north of video, counting clockwise) in degrees
+eztrack_vid_src: 2
+eztrack_vid_dim: [480, 640]
+eztrack_calib_sec: 3
+eztrack_mask:
+  r0: 168
+  r1: 230
+  center:
+    - 325 # width
+    - 250 # height (reversed, smaller number moves it north)
+sound_device: 6

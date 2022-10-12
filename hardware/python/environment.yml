@@ -1,0 +1,19 @@
+name: enbridge
+channels:
+  - conda-forge
+dependencies:
+  - pyserial
+  - jupyter
+  - black
+  - pyyaml
+  - python-sounddevice
+  - pysoundfile
+  - pandas
+  - pyqt
+  - matplotlib
+  - opencv=4.5.3
+  - holoviews=1.14.5
+  - scipy
+  - scikit-learn
+  - bokeh
+  - h5py

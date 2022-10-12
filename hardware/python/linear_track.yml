@@ -1,0 +1,54 @@
+# Arduino settings. These has to agree with arduino sketch
+
+PORT: "COM9"
+BAUDRATE: 115200
+CMD_FLAG: 255
+TIMEOUT: 2
+TIMEOUT_HANDSHAKE: 5
+OUTPUT_PINS:
+  miniscope_ttl: 1
+  reward1: 2
+  reward2: 3
+
+# Logging settings
+
+LOG_FORMAT: "%(asctime)s: %(levelname)8s - %(message)s"
+LOG_FILE: linear_track.log
+LOG_LEVEL: DEBUG
+PRINT_LEVEL: INFO
+
+# Data settings
+
+DPATH: "."
+DATA_FILE: linear_track.csv
+DATA_HEADER:
+  - timestamp
+  - event
+  - data
+
+# Custom settings, not interpreted by pyMaze
+
+contexts:
+  - A
+lick_threshold: 2 # number of licks before rewarding
+reward_length: 0.07 # reward port open time in seconds
+nport: 2
+reward_port: # by context, 0 correspond to north, counting clockwise
+  A:
+   - reward1
+   - reward2
+session_length: 20 # in minutes
+touch_pin: # definition for touch sensor
+  0: reward1
+  1: reward2
+background_sound:
+  A: "assets/river.wav"
+miniscope_config_dir: "../mini_config_BehaviorCohort1"
+eztrack_vid_src: 0
+eztrack_vid_dim: [480, 640]
+eztrack_calib_sec: 3
+eztrack_mask:
+  outward_length: 270
+  outward_width: 50
+  center: None
+sound_device: 1

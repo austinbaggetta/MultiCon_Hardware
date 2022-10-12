@@ -1,0 +1,89 @@
+# Arduino settings. These has to agree with arduino sketch
+
+PORT: "COM3"
+BAUDRATE: 115200
+CMD_FLAG: 255
+TIMEOUT: 2
+TIMEOUT_HANDSHAKE: 5
+OUTPUT_PINS:
+  miniscope_ttl: 10
+  reward0: 3
+  reward1: 4
+  reward2: 5
+  reward3: 6
+  reward4: 7
+  reward5: 8
+  reward6: 9
+  reward7: 2
+
+# Logging settings
+
+LOG_FORMAT: "%(asctime)s: %(levelname)8s - %(message)s"
+LOG_FILE: circle_track.log
+LOG_LEVEL: DEBUG
+PRINT_LEVEL: INFO
+
+# Data settings
+
+DPATH: "."
+DATA_FILE: circle_track.csv
+DATA_HEADER:
+  - timestamp
+  - event
+  - data
+
+# Custom settings, not interpreted by pyMaze
+
+contexts:
+  - A
+  - B
+  - T
+lick_threshold: 10 # number of licks before rewarding
+reward_length: 0.05 # reward port open time in seconds
+nport: 8
+reward_port: # by context, 0 correspond to north, counting clockwise
+  A:
+    ALL:
+      - reward1
+      - reward6
+  B:
+    ALL:
+      - reward2
+      - reward5
+  T:
+    ALL:
+      - reward0
+      - reward1
+      - reward2
+      - reward3
+      - reward4
+      - reward5
+      - reward6
+      - reward7
+session_length: 20 # in minutes
+reward_after: 10 # start delivering reward after x minutes
+touch_pin: # definition for touch sensor
+  6: reward4
+  7: reward5
+  8: reward6
+  1: reward7
+  2: reward0
+  3: reward1
+  4: reward2
+  5: reward3
+background_sound:
+  A: "assets/river.wav"
+  B: "assets/storm.wav"
+miniscope_config_dir: "../miniscope_userconfig"
+reward_direction: 1 # 1 or -1 where sign determine the direction
+roi_offset: 180 # offset of port 0 in degrees
+eztrack_vid_src: 1
+eztrack_vid_dim: [480, 640]
+eztrack_calib_sec: 3
+eztrack_mask:
+  r0: 155
+  r1: 210
+  center:
+    - 295 # width
+    - 240 # height (reversed)
+sound_device: 7
