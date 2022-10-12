@@ -1,0 +1,1 @@
+This repository contains the necessary files to run circle track experiments. Create a conda environment from the "environment.yml" file in the "python" folder.
